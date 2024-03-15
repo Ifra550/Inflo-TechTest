@@ -1,0 +1,72 @@
+﻿@model UserManagement.Web.Models.Users.UserListViewModel
+
+<h2>View User</h2>
+
+<div class="table-responsive">
+@* 	@{
+		//bool Message = ViewBag["Message"];
+		string Message = (string)ViewData["Message"]!;
+		if (Message=="UserUpdated")
+		{
+			<div id="wrap" class="text-danger"> User has been updated! </div>
+		}
+	} *@
+	
+	<table class="table table-striped">
+		<tbody>
+			@foreach (var item in Model.Items)
+			{
+				<tr>
+					<td>Id</td>
+					<td>
+						@item.Id
+					</td>
+				</tr>
+				<tr>
+					<td>Forename</td>
+					<td>
+						@item.Forename
+					</td>
+				</tr>
+				<tr>
+					<td>Surname</td>
+					<td>
+						@item.Surname
+					</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>
+						@item.Email
+					</td>
+				</tr>
+				<tr>
+					<td>IsActive</td>
+					<td>
+						@(item.IsActive ? "Yes" : "No")
+					</td>
+				</tr>
+				<tr>
+					<td>DateOfBirth</td>
+					<td>
+						@item.DateOfBirth
+					</td>
+				</tr>
+@* 
+					<tr>
+						<div class="dropdown">
+							<button type="button" class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="btnToggleActions">
+								Actions
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="btnToggleActions">
+								<li><a class="dropdown-item" href="#">View</a></li>
+								<li><a class="dropdown-item" href="#">Edit</a></li>
+								<li><a class="dropdown-item" href="#">Delete</a></li>
+							</ul>
+						</div>
+					</tr> *@
+			}
+		</tbody>
+	</table>
+</div>
+
